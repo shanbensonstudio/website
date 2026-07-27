@@ -7,4 +7,12 @@ document.addEventListener("DOMContentLoaded", function () {
       links.classList.toggle("is-open");
     });
   }
+
+  if (document.body.classList.contains("is-loading")) {
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var delay = reduceMotion ? 0 : 1100;
+    window.setTimeout(function () {
+      document.body.classList.remove("is-loading");
+    }, delay);
+  }
 });

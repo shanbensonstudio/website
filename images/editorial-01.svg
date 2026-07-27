@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="650" height="860" viewBox="0 0 650 860">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c9a880"/>
+      <stop offset="100%" stop-color="#8a6a45"/>
+    </linearGradient>
+  </defs>
+  <rect width="650" height="860" fill="url(#g)"/>
+  <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle"
+        font-family="Helvetica, Arial, sans-serif" font-size="46"
+        letter-spacing="2" fill="rgba(255,255,255,0.75)">EDITORIAL</text>
+</svg>

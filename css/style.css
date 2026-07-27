@@ -1,10 +1,11 @@
 :root {
-  --color-bg: #ffffff;
-  --color-text: #1a1a1a;
-  --color-muted: #5a5a5a;
-  --color-accent: #2b2b2b;
-  --color-border: #e5e5e5;
+  --color-bg: #f2efe8;
+  --color-text: #16150f;
+  --color-muted: #6b6960;
+  --color-accent: #16150f;
+  --color-border: #ddd8cc;
   --max-width: 1100px;
+  --header-h: 66px;
   --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
@@ -41,31 +42,36 @@ img {
 
 /* Header / nav */
 .site-header {
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid transparent;
   position: sticky;
   top: 0;
-  background: var(--color-bg);
-  z-index: 10;
+  background: rgba(242, 239, 232, 0.86);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 30;
 }
 
 .site-header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  height: var(--header-h);
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .logo {
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: 0.95rem;
+  font-weight: 800;
   text-decoration: none;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text);
 }
 
 .nav-links {
   display: flex;
-  gap: 32px;
+  gap: 28px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -73,7 +79,10 @@ img {
 
 .nav-links a {
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   color: var(--color-muted);
   transition: color 0.15s ease;
 }
@@ -108,6 +117,143 @@ img {
   color: var(--color-muted);
   max-width: 640px;
   margin: 0 0 32px;
+}
+
+/* Home — loading collage / scatter gallery */
+.home-hero {
+  position: relative;
+  height: calc(100vh - var(--header-h));
+  min-height: 560px;
+  overflow: hidden;
+  background: var(--color-bg);
+}
+
+.plus-mark {
+  position: absolute;
+  top: 4%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.75rem;
+  font-weight: 300;
+  color: var(--color-text);
+  z-index: 6;
+}
+
+.brand-flash {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  z-index: 6;
+  font-size: clamp(2rem, 6.5vw, 5.5rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  white-space: nowrap;
+  text-align: center;
+  animation: brandFlicker 6s ease-in-out infinite;
+}
+
+@keyframes brandFlicker {
+  0%, 2%, 4%, 5%, 7%, 100% { opacity: 1; }
+  1%, 3%, 6% { opacity: 0.3; }
+}
+
+.scatter-item {
+  position: absolute;
+  top: var(--top);
+  left: var(--left);
+  width: var(--w);
+  z-index: 2;
+  transform: rotate(var(--rot));
+  transition: transform 1.3s cubic-bezier(0.16, 1, 0.3, 1) var(--d, 0s),
+              opacity 1s ease var(--d, 0s);
+  opacity: 1;
+}
+
+.scatter-item--feature {
+  z-index: 3;
+}
+
+.scatter-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Gathered / loading state — photos clustered center, wordmark holding the space */
+body.is-loading .scatter-item {
+  transform: translate(
+      calc(50vw - var(--left) - (var(--w) / 2)),
+      calc(48vh - var(--top) - (var(--w) * 0.65))
+    )
+    scale(0.4) rotate(0deg);
+  opacity: 0.9;
+  transition: none;
+}
+
+.statement {
+  text-align: center;
+}
+
+.statement .section-lead {
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.statement .btn {
+  margin-top: 8px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-flash {
+    animation: none;
+  }
+
+  .scatter-item,
+  body.is-loading .scatter-item {
+    transform: rotate(var(--rot)) !important;
+    transition: none !important;
+    opacity: 1 !important;
+  }
+}
+
+@media (max-width: 860px) {
+  .home-hero {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    padding: 48px 0 32px;
+  }
+
+  .plus-mark {
+    display: none;
+  }
+
+  .brand-flash {
+    position: static;
+    transform: none;
+    display: block;
+    margin: 0 auto 28px;
+    font-size: clamp(1.8rem, 9vw, 2.6rem);
+    animation: none;
+  }
+
+  .scatter-item,
+  body.is-loading .scatter-item {
+    position: static;
+    width: 84%;
+    max-width: 360px;
+    margin: 0 auto 20px;
+    transform: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    display: block;
+  }
 }
 
 .btn {

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="460" viewBox="0 0 620 460">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a98868"/>
+      <stop offset="100%" stop-color="#5c452f"/>
+    </linearGradient>
+  </defs>
+  <rect width="620" height="460" fill="url(#g)"/>
+  <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle"
+        font-family="Helvetica, Arial, sans-serif" font-size="32"
+        letter-spacing="2" fill="rgba(255,255,255,0.75)">INTERIOR</text>
+</svg>
