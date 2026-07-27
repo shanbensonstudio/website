@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Shan Benson Studio</title>
+  <meta name="description" content="Learn about Shan Benson Studio.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">Shan Benson Studio</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>About the studio</h1>
+        <p>Shan Benson Studio is a design practice focused on building brands and products that feel considered — every detail earning its place.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2 class="section-title">Our approach</h2>
+        <p class="section-lead">We work closely with each client, keeping the process collaborative and the output honest — no unnecessary flourishes, just work that serves the goal.</p>
+        <div class="grid">
+          <div class="card">
+            <h3>Collaborative</h3>
+            <p>You're involved at every stage, not just the beginning and the end.</p>
+          </div>
+          <div class="card">
+            <h3>Considered</h3>
+            <p>Every decision is made with a reason behind it.</p>
+          </div>
+          <div class="card">
+            <h3>Reliable</h3>
+            <p>Clear timelines and communication from kickoff to delivery.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>&copy; <span id="year"></span> Shan Benson Studio</span>
+      <span><a href="contact.html">Contact</a></span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

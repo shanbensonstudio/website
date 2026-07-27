@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shan Benson Studio</title>
+  <meta name="description" content="Shan Benson Studio — design and creative services.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">Shan Benson Studio</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Design that moves your work forward.</h1>
+        <p>Shan Benson Studio partners with brands and teams to create thoughtful, effective design work — from concept to delivery.</p>
+        <a href="contact.html" class="btn btn-primary">Get in touch</a>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2 class="section-title">What we do</h2>
+        <p class="section-lead">A few of the ways we can help.</p>
+        <div class="grid">
+          <div class="card">
+            <h3>Brand Identity</h3>
+            <p>Logos, visual systems, and guidelines that give your brand a clear, consistent voice.</p>
+          </div>
+          <div class="card">
+            <h3>Web Design</h3>
+            <p>Clean, fast websites built around your content and your users.</p>
+          </div>
+          <div class="card">
+            <h3>Creative Direction</h3>
+            <p>Guidance across campaigns, product, and content so everything feels like one thing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>&copy; <span id="year"></span> Shan Benson Studio</span>
+      <span><a href="contact.html">Contact</a></span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
